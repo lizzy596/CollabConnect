@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "description": "CollabConnect",
   "bin": "bin/createNodejsApp.js",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/lizzy596/CollabConnect",
   "author": "colleen boehme",
   "license": "MIT",
