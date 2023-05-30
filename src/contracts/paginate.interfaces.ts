@@ -23,3 +23,8 @@ export const createEmptyQueryResult = (): IQueryResult => ({
   totalPages: 0,
   totalResults: 0,
 });
+
+
+export interface IOptionalStaticSearch {
+  searchableFields?: () => string[];
+}

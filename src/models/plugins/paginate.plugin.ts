@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { Schema, Document, Model } from 'mongoose';
-import { IPaginateOptions, IQueryResult } from '../../contracts/paginate.interfaces';
+import { IPaginateOptions, IQueryResult, IOptionalStaticSearch } from '../../contracts/paginate.interfaces';
 
 
 const paginate = <T extends Document, U extends Model<U>>(schema: Schema<T>): void => {  /**
