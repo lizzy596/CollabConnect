@@ -39,6 +39,7 @@ const paginate = (schema) => {
             const page = options.page && parseInt(options.page.toString(), 10) > 0 ? parseInt(options.page.toString(), 10) : 1;
             const skip = (page - 1) * limit;
             // Global Search
+            // @ts-ignore
             const searchFilter = [...this.searchableFields()].map((field) => {
                 return {
                     [field]: { $regex: search, $options: 'i' },
