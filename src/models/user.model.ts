@@ -86,7 +86,7 @@ userSchema.static('searchableFields', function searchableFields(): string[] {
 userSchema.static(
   'isEmailTaken',
   async function isEmailTaken(email: string, excludeUserId: mongoose.Types.ObjectId): Promise<boolean> {
-    const user = this.findOne({ email, _id: { $ne: excludeUserId } });
+    const user = await this.findOne({ email, _id: { $ne: excludeUserId } });
     return !!user;
   }
 );

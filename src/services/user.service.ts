@@ -11,6 +11,7 @@ import ApiError from '../utils/ApiError';
  * @returns {Promise<User>}
  */
 const createUser = async (userBody: CreateUser): Promise<IUserDocument> => {
+  console.log(userBody)
   if (await User.isEmailTaken(userBody.email)) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Email already taken');
   }
