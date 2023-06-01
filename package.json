@@ -10,7 +10,6 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "type": "module",
   "scripts": {
     "build": "npx rimraf ./dist && npx tsc && cp .env ./dist/.env",
     "start": "cross-env NODE_ENV=development nodemon",
@@ -117,6 +116,7 @@
     "prettier": "^2.8.7",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
     "tslint": "^6.1.3",
     "typescript": "^5.0.4"
   }

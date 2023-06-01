@@ -1,7 +1,8 @@
 import express, { NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
-import xss from 'xss-clean';
+//@ts-ignore
+// import xss from 'xss-clean';
 import mongoSanitize from 'express-mongo-sanitize';
 import compression from 'compression';
 import cors from 'cors';
@@ -35,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // sanitize request data
-app.use(xss());
+// app.use(xss());
 app.use(mongoSanitize());
 
 // gzip compression

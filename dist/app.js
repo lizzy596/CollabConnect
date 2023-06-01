@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const helmet_1 = __importDefault(require("helmet"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
-const xss_clean_1 = __importDefault(require("xss-clean"));
+//@ts-ignore
+// import xss from 'xss-clean';
 const express_mongo_sanitize_1 = __importDefault(require("express-mongo-sanitize"));
 const compression_1 = __importDefault(require("compression"));
 const cors_1 = __importDefault(require("cors"));
@@ -33,7 +34,7 @@ app.use(express_1.default.urlencoded({ extended: true }));
 // parse cookies
 app.use((0, cookie_parser_1.default)());
 // sanitize request data
-app.use((0, xss_clean_1.default)());
+// app.use(xss());
 app.use((0, express_mongo_sanitize_1.default)());
 // gzip compression
 app.use((0, compression_1.default)());
