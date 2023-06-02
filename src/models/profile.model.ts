@@ -7,7 +7,6 @@ const profileSchema = new Schema<IProfile>(
   {
     bio: {
       type: String,
-      index: true,
     },
     user: {
       type: String,

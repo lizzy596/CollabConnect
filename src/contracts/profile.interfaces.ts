@@ -1,5 +1,3 @@
-import mongoose from 'mongoose';
-
 export interface IProfile {
   bio?: string;
   interests?: string;
