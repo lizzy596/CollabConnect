@@ -22,7 +22,8 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check **/*.js",
     "prettier:fix": "prettier --write **/*.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "create-files": "/usr/bin/python3 server-files-generator.py "
   },
   "keywords": [
     "node",
