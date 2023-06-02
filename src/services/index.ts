@@ -6,3 +6,5 @@ export { authService } from './auth.service';
 export { googleService } from './google.service';
 export { profileService } from './profile.service';
 //export { appleService } from './apple.service';
+export { workspaceService } from './workspace.service'
+export { ratingService } from './rating.service'

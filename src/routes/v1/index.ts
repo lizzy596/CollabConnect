@@ -1,7 +1,10 @@
+
+import  ratingRoute from './rating.route'
 import express, { Router } from 'express';
 import authRoute from './auth.route';
 import userRoute from './user.route';
 import profileRoute from './profile.route';
+import workspaceRoute  from './workspace.route'
 //import docsRoute from './docs.route';
 import {config} from '../../config/config';
 

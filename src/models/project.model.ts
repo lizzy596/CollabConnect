@@ -18,6 +18,10 @@ const projectSchema = new Schema<IProject>(
     owner: {
       type: String,
     },
+    isPrivate: {
+      type: Boolean,
+      default: false,
+    },
     collaborators: {
       type: [String],
     },
