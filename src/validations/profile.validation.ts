@@ -8,7 +8,7 @@ const createProfile = {
     avatar: Joi.string(),
     skills: Joi.string(),
     location: Joi.string(),
-    user: Joi.string()
+    user: Joi.string().required()
   }),
 };
 

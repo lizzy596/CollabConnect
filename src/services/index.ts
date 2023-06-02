@@ -4,4 +4,5 @@ export { cookieService } from './cookie.service';
 export { tokenService } from './token.service';
 export { authService } from './auth.service';
 export { googleService } from './google.service';
+export { profileService } from './profile.service';
 //export { appleService } from './apple.service';

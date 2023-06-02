@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import authRoute from './auth.route';
 import userRoute from './user.route';
+import profileRoute from './profile.route';
 //import docsRoute from './docs.route';
 import {config} from '../../config/config';
 
@@ -15,6 +16,10 @@ const defaultRoutes: { path: string; route: Router }[] = [
     path: '/users',
     route: userRoute,
   },
+  {
+    path: '/profile',
+    route: profileRoute,
+  }
 ];
 
 // const devRoutes: { path: string; route: Router }[] = [
