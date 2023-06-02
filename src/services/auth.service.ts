@@ -6,6 +6,7 @@ import Token from '../models/token.model';
 import ApiError from '../utils/ApiError';
 import { tokenTypes } from '../config/tokens';
 import { IUserDocument, IUserWithTokens } from '../contracts/user.interfaces';
+import { ITokenDocument } from '../contracts/token.interfaces';
 
 /**
  * Login with username and password
@@ -50,7 +51,11 @@ export const refreshAuth = async (refreshToken: string):Promise<IUserWithTokens>
       throw new Error();
     }
 
-    await Token.deleteOne({ _id: refreshTokenDoc.user})
+    await tokenService.deleteTokenById(refreshTokenDoc._id);
+    // Clear user tokens
+    await tokenService.clearUserTokens(refreshTokenDoc.user);
+
+    // await Token.deleteOne({ _id: refreshTokenDoc.user})
 
     const tokens = await tokenService.generateAuthTokens(user);
     return { user, tokens };

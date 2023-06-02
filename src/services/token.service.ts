@@ -55,7 +55,7 @@ const saveToken = async (token: string, userId: mongoose.Types.ObjectId, expires
  * @param {string} type
  * @returns {Promise<Token>}
  */
-const verifyToken = async (token: string, type: string): Promise<IToken> => {
+const verifyToken = async (token: string, type: string): Promise<ITokenDocument> => {
   const payload = jwt.verify(token, config.jwt.secret);
   if (typeof payload.sub !== 'string') {
     throw new ApiError(httpStatus.BAD_REQUEST, 'bad user');
@@ -119,6 +119,14 @@ const generateVerifyEmailToken = async (user: IUserDocument): Promise<string> =>
   return verifyEmailToken;
 };
 
+const clearUserTokens = async (userId: string) => {
+  await Token.deleteMany({ user: userId });
+};
+
+const deleteTokenById = (id: mongoose.Types.ObjectId) => {
+  return Token.findByIdAndDelete(id);
+};
+
 export const tokenService =  {
   generateToken,
   saveToken,
@@ -126,4 +134,6 @@ export const tokenService =  {
   generateAuthTokens,
   generateResetPasswordToken,
   generateVerifyEmailToken,
+  clearUserTokens,
+  deleteTokenById
 };
