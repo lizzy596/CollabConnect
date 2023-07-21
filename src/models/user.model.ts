@@ -33,13 +33,15 @@ const userSchema = new Schema<IUserDocument, IUserModel>(
     },
     password: {
       type: String,
+      // required: true, TODO: do we need this?
       trim: true,
       minlength: 8,
-      validate(value: string) {
-        if (!value.match(/\d/) || !value.match(/[a-zA-Z]/)) {
-          throw new Error('Password must contain at least one letter and one number');
+      validate(value: String) {
+        if (!value.match(/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/)) {
+          throw new Error('Password must contain at least one uppercase letter, one number, one special character, and be at least 8 characters long');
         }
       },
+      
       private: true, // used by the toJSON plugin
     },
     authType: {
